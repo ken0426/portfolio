@@ -1,0 +1,110 @@
+<header>
+  <div class="top-header">
+  <%# PCの時に表示 %>
+  <div class="menu-pc">
+      <nav>
+        <ul>
+          <li id="button1">Profile</li>
+          <li id="button2">Skill</li>
+          <li id="button3">Portfolio</li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+<%# PCの時に表示 %>
+<%# スマホの時に表示 %>
+<div class="menu-smafo">
+  <input type="checkbox" id="input">
+  <label for="input" class="nav-close"></label>
+  <label for="input">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </label>
+  <div class="content">
+    <ul>
+      <li id="button4">Profile</li>
+      <li id="button5">Skill</li>
+      <li id="button6">Portfolio</li>
+    </ul>
+  </div>
+</div>
+<%# スマホの時に表示 %>
+
+
+  <div class="second-header">
+    <img src="https://cdn.pixabay.com/photo/2017/01/24/03/53/plant-2004483_1280.jpg" alt="トップ画像" class="top-img">
+    <p>My portfolio</p>
+  </div>
+</header>
+
+<div class="animationTarget" id="content1">
+<div class="main">
+  <div class="main-left">
+    <%= image_tag "IMG_5483.JPG", class:"my-img"%>
+    <%# <%= image_tag "IMG_73CECDD998F9-1.jpg", class:"my-img" %> 
+  </div>
+  <div class="main-light" >
+    <div class="name-box">
+      <p class="name">Kent Toda</p>
+    </div>
+    <h1 class="main-title">
+      1997年生まれ 兵庫県出身 A型
+    </h1>
+    <p class="self">
+      高等学校を卒業後、都市計画や、まちづくりに興味を持ち、<a target="_blank" href="https://www.kobe-du.ac.jp/">神戸芸術工科大学</a>/環境デザイン学科に入学する。<br>
+      しかし、当時はアルバイトの接客に没頭し、経験を積むためアルバイトに専念した。<br>
+      大学を中途退学後、高校時代から続けていた飲食のアルバイトで二年間アルバイト漬けの生活を送るが、<br>
+      その後、正社員雇用として携帯電話の販売代理店で営業接客として就職する。<br>
+      端末を販売する中で、アプリケーションの仕組みに興味が沸き、プログラミングの勉強を独学で開始。<br>
+      その後、プログラミングスクールのテックキャンプ  を利用し、更に3ヶ月間プログラミング学習を行い今に至る。
+    </p>
+  </div>
+</div>
+</div>
+
+<div class="animationTarget" id="content2">
+<div class="skill">
+  <h1 class="title-name">
+    skill
+  </h1>
+  <div class="languages-box">
+    <p class="language">HTML</p>
+    <p class="language">CSS</p>
+    <p class="language">Javascript</p>
+  </div>
+    <div class="languages-box">
+    <p class="language">Ruby</p>
+    <p class="language">Ruby on Rails</p>
+    <p class="language">PHP</p>
+  </div>
+  <div class="languages-box">
+    <p class="language">Git</p>
+    <p class="language">GitHub</p>
+    <p class="language">MySQL</p>
+  </div>
+</div>
+</div>
+
+<div class="animationTarget" id="content3">
+<div class="work">
+  <h1 class="title-name">
+    Portfolio
+  </h1>
+  <div class="aitems-box">
+    <a target="_blank"  href="https://daily-30575-app.herokuapp.com/"><%= image_tag "Daily.png", class:"aitem" %><p>Daily</p></a>
+    <a  href="#"><%= image_tag "code.jpg", class:"aitem" %><p>Create...</p></a>
+    <a  href="#"><%= image_tag "code.jpg", class:"aitem" %><p>Create...</p></a>
+  </div>
+  <div class="aitems-box">
+    <a  href="#"><%= image_tag "code.jpg", class:"aitem" %><p>Create...</p></a>
+    <a  href="#"><%= image_tag "code.jpg", class:"aitem" %><p>Create...</p></a>
+    <a  href="#"><%= image_tag "code.jpg", class:"aitem" %><p>Create...</p></a>
+  </div>
+</div>
+</div>
+
+<footer>
+  <div class="footer">
+  </div>
+</footer>

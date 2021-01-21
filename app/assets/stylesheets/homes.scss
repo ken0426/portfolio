@@ -1,0 +1,700 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin:0;
+  padding:0;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+fieldset,
+img {
+  border:0;
+}
+
+/*
+  TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style:normal;
+  font-weight:normal;
+}
+
+ol,
+ul {
+  list-style:none;
+}
+
+caption,
+th {
+  text-align:left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size:100%;
+  font-weight:normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+.top-header{
+  width: 100%;
+  height: 60px;
+  background-color: black;
+}
+
+nav{
+  height: 100%;
+}
+
+.top-header ul{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top-header li{
+  color: #fff;
+  display: block;
+  font-size: 33px;
+  line-height: 60px;
+  margin-right: 40px;
+  cursor: pointer;
+  font-family: "PT Serif";
+}
+
+
+
+input{
+  display: none;
+}
+
+
+.line{
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.content{
+  background-color: gray;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(100%);  
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+  opacity: .9;
+  transition: .3s ease-in-out;
+  padding-top: 65px;
+}
+
+.menu-smafo li{
+  color: #fff;
+  font-size: 30px;
+  font-family: "PT Serif";
+  margin: 10px 0 35px 24%;
+  padding-right: 20px;
+  text-align: left;
+  letter-spacing: 10px;
+  border-bottom: 3px solid #fff;
+  cursor: pointer;
+}
+
+input:checked ~ .content{
+  transform: translateX(20%);
+  transition: .3s ease-in-out;
+}
+
+.nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index: 98;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+input:checked ~ .nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .8;
+}
+
+@media screen and (min-width:740px){
+  .menu-smafo{
+    display: none;
+  }
+}
+
+@media screen and (max-width:739px){
+  .top-header{
+    display: none;
+  }
+
+  .menu-smafo{
+    display: block;
+    width: 100%;
+    height: 25px;
+    background-color: #000;
+    padding-top: 8px;
+  }
+}
+
+.second-header{
+  height: 580px;
+  position: relative;
+}
+
+@keyframes p {
+  0% {
+    opacity: 0;
+    letter-spacing: 1px;
+    font-size: 1px;
+    color: black;
+  }
+  50% {
+    opacity: .5;
+    letter-spacing: 25px;
+    color: black;
+  }
+  80%{
+    color: black;
+  }
+}
+
+.second-header p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  font-family: "Baskerville";
+  color: #707070;
+  font-size: 100px;
+  letter-spacing: 3px;
+  animation: p 4s;
+}
+
+.top-img{
+  width: 100%;
+  height: 580px;
+  object-fit: cover;
+}
+
+.main{
+  display: flex;
+  height: 100%;
+}
+
+.main-left{
+  width: 40%;
+  height: 670px;
+  position: relative;
+}
+
+.my-img{
+    width:  400px;
+    height: 400px;
+    object-fit:cover;
+    border-radius: 50%;
+    background-position: left top;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateY(0deg);
+    border: 10px solid black;
+    box-sizing: border-box;
+    box-shadow: 0 0 30px gray;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+.my-img:hover{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotateY(360deg);
+}
+
+.main-light{
+  width: 60%;
+  height: 100%;
+}
+
+.name-box{
+  text-align: center;
+  padding-top: 120px;
+}
+
+.name{
+  margin: 0 auto;
+  font-size: 100px;
+  color: #707070;
+  border-top:10px #707070 double;
+  border-bottom:10px #707070 double;
+  display: inline-block;
+  letter-spacing: 12px;
+  font-family: "SignPainter";
+  transition: all .7s;
+  opacity: 0;
+  transform: translateX(200px);
+  transition: 2s;
+}
+
+.animationTarget.show .name{
+  opacity: 1;
+  transform: none;
+}
+
+
+.name:hover{
+  color: #fff;
+  border-top:10px #fff double;
+  border-bottom:10px #fff double;
+  background-color: black;
+}
+
+.main-title{
+  margin-top: 70px;
+  font-size: 18px;
+  color: #707070;
+  font-family: "Baskerville";
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: 2s;
+}
+
+.animationTarget.show .main-title{
+  opacity: 1;
+  transform: none;
+}
+
+.self{
+  margin-top: 30px;
+  font-size: 16px;
+  line-height: 33px;
+  color: #707070;
+  font-family: "Baskerville";
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateX(200px);
+  transition: 2s;
+}
+
+.animationTarget.show .self{
+  opacity: 1;
+  transform: none;
+}
+
+.self a{
+  color: #707070;
+}
+
+.self a:hover{
+  text-decoration: underline;
+}
+
+.skill{
+  width: 100%;
+  height: 100%;
+  background-color: #F2F0F0;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.languages-box{
+  display: flex;
+  justify-content: space-around;
+  font-size: 40px;
+  font-family: "Georgia";
+  color: #707070;
+  opacity: 0;
+  transform: translateY(200px);
+  transition: 2s;
+}
+
+.animationTarget.show .languages-box{
+  transform: none;
+  opacity: 1;
+}
+
+.language{
+  width: 280px;
+  margin: 50px 0;
+  transition: all .5s;
+  cursor: pointer;
+  text-align: center;
+}
+
+
+.language:hover{
+  color: #fff;
+  background-color: black;
+}
+
+.title-name{
+  color: #707070;
+  font-size: 85px;
+  font-family: "Baskerville";
+  display: inline-block;
+  margin: 0 auto;
+  border-bottom: 1px #707070 solid;
+  line-height: 90px;
+}
+
+.work{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding-top: 60px;
+  
+}
+
+.aitems-box{
+  display: flex;
+  justify-content: space-around;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 2s;
+}
+
+.animationTarget.show .aitems-box{
+  opacity: 1;
+  transition: none;
+}
+
+.aitems-box a{
+  width: 350px;
+  height: 100%;
+  overflow:hidden;
+  position: relative;
+}
+
+.aitems-box p{
+  font-size: 35px;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  color: black;
+  font-family: "Georgia";
+  color: #707070;
+}
+
+.aitems-box span{
+  font-size: 20px;
+
+}
+
+.aitem{
+  width: 350px;
+  height: 100%;
+  cursor: pointer;
+  margin: 50px 0 70px 0;
+  transition:.2s all;
+  opacity: 0.6;
+  filter: blur(2px);
+}
+
+.aitem:hover{
+  transform: scale(1.1);
+  transition-duration: 0.2s;
+  filter: blur(0px);
+}
+
+.footer{
+  margin-top: 45px;
+  width: 100%;
+  height: 30px;
+  background-color: black;
+}
+
+.animationTarget{
+  opacity: 0;
+  transition: 1s;
+  transform: translateY(100px);
+}
+
+.animationTarget.show{
+  opacity: 1;
+  transform: none;
+}
+
+// ====横幅1920以上のディスプレイの場合=====
+@media screen and (min-width: 1920px){
+  .main-title{
+    font-size: 20px;
+  }
+
+  .self{
+    font-size: 20px;
+  }
+}
+// ==========================================
+
+// ====横幅1440未満のディスプレイの場合=====
+@media screen and (max-width: 1439px){
+  .main-title{
+    font-size: 14px;
+  }
+
+  .second-header p{
+    animation: none;
+  }
+
+  .self{
+    font-size: 14px;
+  }
+}
+// ==========================================
+
+// ==============iPad画面サイズ==============
+@media screen and (max-width: 768px){
+  .second-header p{
+    font-size: 75px;
+    animation: none;
+  }
+
+  .main{
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .main-left{
+    width: 100%;
+  }
+
+  .main-light{
+    width: 100%;
+  }
+
+  .name-box{
+    padding-top: 10px;
+  }
+
+  .main-title{
+    font-size: 13.5px;
+    text-align: center;
+  }
+
+
+  .self{
+    font-size: 13.5px;
+    text-align: center;
+  }
+
+  .skill{
+    padding-bottom: 1px;
+  }
+
+  .languages-box{
+    display: block;
+    width: 100%;
+  }
+
+  .language{
+    margin: 30px auto;
+  }
+
+  .aitems-box{
+    display: block;
+  }
+
+  .aitems-box a{
+    display: block;
+    width: 350px;
+    margin: 0 auto;
+  }
+
+  .aitem{
+    filter: blur(0px); 
+  }
+}
+// =====================================================
+
+// ==============iPadProシリーズ画面サイズ==============
+@media screen and (max-width: 1024px){
+.second-header p{
+  animation: none;
+}
+
+.my-img{
+  width: 300px;
+  height: 300px;
+}
+
+.name{
+  font-size: 80px;
+}
+
+.self{
+  font-size: 11px;
+}
+
+.aitem{
+  width: 260px;
+  filter: blur(0px); 
+}
+
+.aitems-box a{
+  width: 260px;
+}
+}
+// =====================================================
+
+// ===============iPhoneX以降画面サイズ=================
+@media screen and (max-width: 375px){
+  .top-img{
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+
+  .second-header{
+    height: 240px;
+  }
+
+  .second-header p{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    font-family: "Baskerville";
+    color: #707070;
+    font-size: 49px;
+    animation: none;
+  }
+
+  .main{
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .main-left{
+    width: 100%;
+    height: 300px;
+  }
+
+  .my-img{
+    width: 200px;
+    height: 200px;
+  }
+
+  .main-light{
+    width: 100%;
+  }
+
+  .name-box{
+    padding-top: 10px;
+  }
+
+  .name{
+    font-size: 50px;
+  }
+
+  .main-title{
+    font-size: 13.5px;
+    text-align: center;
+  }
+
+
+  .self{
+    font-size: 13.5px;
+    text-align: left;
+    padding: 0 6px;
+  }
+
+  .skill{
+    padding-bottom: 1px;
+  }
+
+  .title-name{
+    font-size: 60px;
+  }
+
+  .languages-box{
+    display: block;
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .language{
+    margin: 30px auto;
+  }
+
+  .aitems-box{
+    display: block;
+  }
+
+  .aitems-box a{
+    display: block;
+    width: 260px;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .aitem{
+    width: 260px;
+    filter: blur(0px); 
+  }
+}
